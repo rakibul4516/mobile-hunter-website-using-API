@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phone hunter API</title>
+</head>
+<body>
+    <header>
+        <nav class="flex flex-wrap justify-between w-11/12 mx-auto my-3 items-center">
+            <h1 class="text-4xl font-semibold">PHONESHOP</h1>
+            <div>
+                <input id="search-field" type="text" placeholder="Search...." class="input input-secondary max-w-xs" />
+                <button id="search-btn" onclick="showAll()" class="btn btn-primary ml-2">Search</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="w-10/12 mx-auto">
+            <!-- show phones div -->
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+            <!-- show more button -->
+            <div id="show-more" class="hidden text-center my-5">
+                <button class="btn btn-active btn-primary">Show More</button>
+            </div>
+        </section>
+        <!-- loading spineer -->
+        <div id="loading-spinner" class=" hidden text-center mt-60">
+            <span class="loading loading-spinner text-primary"></span>
+        </div>
+        <!-- product unabileable section -->
+        <div id="product-not-found" class=" hidden text-center mt-60">
+            <h1 class="text-4xl font-semibold">Product not found .Please search again</h1>
+        </div>
+        <!-- modal section for show mobile details  -->
+        <section>
+            <div id="show-details-modal-container">
+                <!-- Open the modal using ID.showModal() method -->
+                <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <div id="show-modal-container">
+                        
+                    </div>
+                    <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                    </div>
+                </form>
+                </dialog>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
